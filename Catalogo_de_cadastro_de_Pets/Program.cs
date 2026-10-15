@@ -266,7 +266,7 @@ namespace Catalogo_de_cadastro_de_Pets
                                         Console.SetCursorPosition(0, 14);
                                         Console.Write(new string(' ', 50));
                                         Console.SetCursorPosition(0, 14);
-                                        
+
                                         Lista_Pets[i] = obj_Pet;
                                         break;
                                     }
@@ -288,7 +288,7 @@ namespace Catalogo_de_cadastro_de_Pets
                                 s_Nome = string.Empty;
                                 b_Encontrou = false;
 
-                                s_Nome = obj_FuncaoGeral.PegaString("Digite o nome do Pet que deseja buscar: ");
+                                s_Nome = obj_FuncaoGeral.PegaString("Digite o nome do Pet que deseja deletar: ");
 
                                 for (int i = 0; i < Lista_Pets.Count; i++)
                                 {
@@ -323,7 +323,61 @@ namespace Catalogo_de_cadastro_de_Pets
                                     Console.WriteLine("Pet {0} não encontrado.", s_Nome);
                                 }
 
-                            } while (obj_FuncaoGeral.PegaString("Deseja buscar outro Pet (S/N) ?").ToUpper() == "S");
+                            } while (obj_FuncaoGeral.PegaString("Deseja deletar outro Pet (S/N) ?").ToUpper() == "S");
+                            break;
+                        }
+                    case 3:
+                        {
+                            do
+                            {
+                                Console.Clear();
+                                s_Nome = string.Empty;
+                                b_Encontrou = false;
+
+                                s_Nome = obj_FuncaoGeral.PegaString("Digite o nome do Pet que deseja buscar: ");
+
+                                for (int i = 0; i < Lista_Pets.Count; i++)
+                                {
+                                    if (Lista_Pets[i].s_Nome.ToUpper() == s_Nome.ToUpper())
+                                    {
+                                        b_Encontrou = true;
+                                        Console.Clear();
+                                        TelaInicial();
+
+                                        Console.SetCursorPosition(28, 4);
+                                        Console.WriteLine(Lista_Pets[i].s_TipoAnimal);
+
+                                        Console.SetCursorPosition(28, 6);
+                                        Console.WriteLine(Lista_Pets[i].s_Raca);
+
+                                        Console.SetCursorPosition(28, 8);
+                                        Console.WriteLine(Lista_Pets[i].s_Nome);
+
+                                        Console.SetCursorPosition(28, 10);
+                                        Console.WriteLine(Lista_Pets[i].i_Idade);
+
+                                        Console.SetCursorPosition(28, 12);
+                                        Console.WriteLine(Lista_Pets[i].s_Vacina);
+
+                                        Console.SetCursorPosition(0, 14);
+
+                                        obj_Pet = Lista_Pets[i];
+
+                                        if (obj_FuncaoGeral.PegaString("Deseja excluir este pet (S/N)? ").ToUpper() == "S")
+                                        {
+                                            Lista_Pets.Remove(obj_Pet);
+                                        }
+                                        break;
+                                    }
+                                }
+
+                                if (!b_Encontrou)
+                                {
+                                    Console.WriteLine("Pet {0} não encontrado.", s_Nome);
+                                }
+
+                            } while (obj_FuncaoGeral.PegaString("Deseja Alterar outro contato (S/N)?").ToUpper() == "S");
+
                             break;
                         }
                     case 5:
