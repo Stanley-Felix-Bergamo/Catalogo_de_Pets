@@ -11,6 +11,8 @@ namespace Catalogo_de_cadastro_de_Pets
 {
     internal class Program
     {
+
+        static string ASCIIArt = "       \\`*-.                    \r\n        )  _`-.                 \r\n       .  : `. .                \r\n       : _   '  \\               \r\n       ; *` _.   `*-._          \r\n       `-.-'          `-.       \r\n         ;       `       `.     \r\n         :.       .        \\    \r\n         . \\  .   :   .-'   .   \r\n         '  `+.;  ;  '      :   \r\n         :  '  |    ;       ;-. \r\n         ; '   : :`-:     _.`* ;\r\n     .*' /  .*' ; .*`- +'  `*'  \r\n      `*-*   `*-*  `*-*'        ";
         static string s_Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ListaPets.txt");
         static List<Pet> Lista_Pets = new List<Pet>();
         static Pet obj_Pet = new Pet();
@@ -18,8 +20,6 @@ namespace Catalogo_de_cadastro_de_Pets
         static int i_Opcao = 0;
         static string s_Nome = string.Empty;
         static bool b_Encontrou = false;
-
-
         static string[] s_ItensMenu =
       {
            "╔════════════════════════════════════╗",
@@ -40,7 +40,7 @@ namespace Catalogo_de_cadastro_de_Pets
             Console.WriteLine("║         Catálogo de Pets           ║");
             Console.WriteLine("║                                    ║");
             Console.WriteLine("╚════════════════════════════════════╝");
-            Console.WriteLine();
+            Console.WriteLine(ASCIIArt);
 
             for (int i = 0; i < ps_Itens.Length; i++)
             {
