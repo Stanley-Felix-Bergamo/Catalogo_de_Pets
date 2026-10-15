@@ -12,7 +12,8 @@ namespace Catalogo_de_cadastro_de_Pets
     internal class Program
     {
 
-        static string ASCIIArt = "       \\`*-.                    \r\n        )  _`-.                 \r\n       .  : `. .                \r\n       : _   '  \\               \r\n       ; *` _.   `*-._          \r\n       `-.-'          `-.       \r\n         ;       `       `.     \r\n         :.       .        \\    \r\n         . \\  .   :   .-'   .   \r\n         '  `+.;  ;  '      :   \r\n         :  '  |    ;       ;-. \r\n         ; '   : :`-:     _.`* ;\r\n     .*' /  .*' ; .*`- +'  `*'  \r\n      `*-*   `*-*  `*-*'        ";
+        static string ASCIIArtGato = "       \\`*-.                    \r\n        )  _`-.                 \r\n       .  : `. .                \r\n       : _   '  \\               \r\n       ; *` _.   `*-._          \r\n       `-.-'          `-.       \r\n         ;       `       `.     \r\n         :.       .        \\    \r\n         . \\  .   :   .-'   .   \r\n         '  `+.;  ;  '      :   \r\n         :  '  |    ;       ;-. \r\n         ; '   : :`-:     _.`* ;\r\n     .*' /  .*' ; .*`- +'  `*'  \r\n      `*-*   `*-*  `*-*'        ";
+        static string ASCIIArtCachorro = "\r\n                              __       \r\n                            .d$$b      \r\n                          .' TO$;\\     \r\n                         /  : TP._;    \r\n                        / _.;  :Tb|    \r\n                       /   /   ;j$j    \r\n                   _.-\"       d$$$$    \r\n                 .' ..       d$$$$;    \r\n                /  /P'      d$$$$P. |\\ \r\n               /   \"      .d$$$P' |\\^\"l\r\n             .'           `T$P^\"\"\"\"\"  :\r\n         ._.'      _.'                ;\r\n      `-.-\".-'-' ._.       _.-\"    .-\" \r\n    `.-\" _____  ._              .-\"    \r\n   -(.g$$$$$$$b.              .'       \r\n     \"\"^^T$$$P^)            .(:        \r\n       _/  -\"  /.'         /:/;        \r\n    ._.'-'`-'  \")/         /;/;        \r\n `-.-\"..--\"\"   \" /         /  ;        \r\n.-\" ..--\"\"        -'          :        \r\n..--\"\"--.-\"         (\\      .-(\\       \r\n  ..--\"\"              `-\\(\\/;`         \r\n    _.                      :          \r\n                            ;`-        \r\n                           :\\          \r\n                           ;        ";
         static string s_Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ListaPets.txt");
         static List<Pet> Lista_Pets = new List<Pet>();
         static Pet obj_Pet = new Pet();
@@ -40,7 +41,7 @@ namespace Catalogo_de_cadastro_de_Pets
             Console.WriteLine("║         Catálogo de Pets           ║");
             Console.WriteLine("║                                    ║");
             Console.WriteLine("╚════════════════════════════════════╝");
-            Console.WriteLine(ASCIIArt);
+            Console.WriteLine(ASCIIArtGato);
 
             for (int i = 0; i < ps_Itens.Length; i++)
             {
@@ -136,7 +137,11 @@ namespace Catalogo_de_cadastro_de_Pets
                                     obj_Pet.i_Idade + "," +
                                     obj_Pet.s_Vacina);
                             }
-
+                         
+                            Console.WriteLine("╔═══════════════════════════════════════╗");
+                            Console.WriteLine("║ Obrigado por utilizar nosso sistema ! ║");
+                            Console.WriteLine("╚═══════════════════════════════════════╝");
+                            Console.WriteLine(ASCIIArtCachorro);
                             Obj_Sw.Close();
                             Environment.Exit(0);
                             break;
