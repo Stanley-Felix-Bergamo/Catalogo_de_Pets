@@ -27,8 +27,8 @@ namespace Catalogo_de_cadastro_de_Pets
            "║0 - Sair                            ║",
            "║1 - Cadastrar                       ║",
            "║2 - Editar                          ║",
-           "║3 - Apagar                          ║",
-           "║4 - Buscar                          ║",
+           "║3 - Buscar                          ║",
+           "║4 - Apagar                          ║",
            "║5 - Listar todos                    ║",
            "╚════════════════════════════════════╝",
         };
@@ -137,7 +137,7 @@ namespace Catalogo_de_cadastro_de_Pets
                                     obj_Pet.i_Idade + "," +
                                     obj_Pet.s_Vacina);
                             }
-                         
+
                             Console.WriteLine("╔═══════════════════════════════════════╗");
                             Console.WriteLine("║ Obrigado por utilizar nosso sistema ! ║");
                             Console.WriteLine("╚═══════════════════════════════════════╝");
@@ -148,10 +148,11 @@ namespace Catalogo_de_cadastro_de_Pets
                         }
                     case 1:
                         {
-                            Console.Clear();
-                            TelaInicial();
                             do
                             {
+                                Console.Clear();
+                                TelaInicial();
+
                                 Console.SetCursorPosition(28, 4);
                                 obj_Pet.s_TipoAnimal = obj_FuncaoGeral.PegaString("");
 
